@@ -14,7 +14,16 @@ const schema = new Schema({
         lowercase:true,
         required:true
     },
-    logo:String,
+    logo:{
+        secure_url:{
+            type:String,
+            required:true
+        },
+        public_id:{
+            type:String,
+            required:true
+        }
+    },
     createdby:{
         type:Types.ObjectId,
         ref:'User'

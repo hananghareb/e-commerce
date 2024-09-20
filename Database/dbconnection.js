@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
+console.log(process.env.DB_URL);
 
 export const dbconnection = (()=>{
-    mongoose.connect('mongodb+srv://hanan:U6Y7ZYbxDazOxvi2@cluster0.kvu2m.mongodb.net/e-commerce').then(()=>{
+    mongoose.connect(process.env.DB_URL).then(()=>{
         console.log('connected database successfully');
         
-    }).catch(()=>{
-        console.log('unconnected database');
+    }).catch((error)=>{
+        console.log('unconnected database', error.message);
         
     })
 

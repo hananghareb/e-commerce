@@ -1,9 +1,9 @@
 
 import slugify from "slugify"
 import { AppError } from "../../utils/appError.js"
-import { catchError } from "../../middleware/catcherror.js"
 import { Brand } from "../../../Database/models/brand.model.js"
 import { Apifeatures } from "../../utils/apifeauters.js"
+import { catchError } from "../../middleware/catcherror.js"
 
 export const addbrand = catchError(async(req,res,next)=>{
     req.body.slug = slugify(req.body.name)
